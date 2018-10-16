@@ -34,11 +34,15 @@ public class LayoutComparer extends JFrame {
 		setTitle("Layout Manager Test");
 		setLayout(new GridLayout(1, 2));
 		LayoutManager m;
-		m = new java.awt.FlowLayout();
-//		m = new java.awt.BorderLayout();
+//		m = new java.awt.FlowLayout();
+		m = new java.awt.BorderLayout();		//Problem was that both panels used the same layout manager.
+		LayoutManager solution2Problem;			//solution: create a second layout manager.
+		solution2Problem = new java.awt.BorderLayout();
 
 		add(createPanel(m, "Left"));
 //		pack();
-		add(createPanel(m, "Right"));
+		//add(createPanel(m, "Right"));
+		add(createPanel(solution2Problem, "Right"));
+
 	}
 }
